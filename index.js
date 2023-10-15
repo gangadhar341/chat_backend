@@ -42,7 +42,7 @@ app.use("/api/notification", notificationRoutes);
 
 //---------------------------Deployment----------------
 
-const __dirname1 = path.resolve();
+/* const __dirname1 = path.resolve();
 //console.log(path.join(__dirname1, "../frontend/build"));
 console.log(path.resolve(__dirname1, "../frontend", "build", "index.html"));
 
@@ -59,7 +59,7 @@ if (process.env.NODE_ENV === "production") {
   app.get("/", (req, res) => {
     res.send("API is running..");
   });
-}
+} */
 
 //---------------------------Deployment----------------
 app.use(notFound);
@@ -67,9 +67,9 @@ app.use(errorHandler);
 
 connectDB()
   .then(() => {
-    const PORT = process.env.PORT || 5000;
+    const PORT = process.env.BASE_URL || 4005;
     const server = app.listen(PORT, () => {
-      console.log(`server is running on http://localhost:${PORT}`);
+      console.log(`server is running on ${PORT}`);
 
       const io = require("socket.io")(server, {
         /* pingTimeout: 60000, */
