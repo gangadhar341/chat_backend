@@ -20,8 +20,7 @@ app.use(bodyParser.json({ limit: "5mb" }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const allowedOrigins = [
-  "https://chatwithme341.netlify.app/",
-  "http://localhost:3000",
+  "https://chatwithme341.netlify.app",
   "https://chatwithme-zuf0.onrender.com",
 ];
 
